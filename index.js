@@ -69,10 +69,40 @@ app.get('/movies/delete', (req, res) => {
 
 })
 
+app.get("/movies/read/by-date", (req, res) => {
+    res.json({
+        status: 200,
+        data: movies.sort(function(a, b) {
+            return a.year - b.year;
+        }),
+    });
+});
+
+
+app.get("/movies/read/by-rating", (req, res) => {
+    res.json({
+        status: 200,
+        data: movies.sort(function(a, b) {
+            return b.rating - a.rating;
+        }),
+    });
+});
 
 
 
+app.get('/movies/read/by-title', (req, res) => {
+    res.json({
+        status: 200,
+        message: movies.sort((a, b) => {
+            if (a.title.toLowerCase() < b.title.toLowerCase())
+                return -1
+            if ((a.title.toLowerCase() > b.title.toLowerCase()))
+                return 1
+            return 0
 
+        })
+    })
+})
 
 
 
