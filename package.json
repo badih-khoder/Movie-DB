@@ -1,25 +1,26 @@
 {
-  "name": "movie-db",
-  "version": "1.0.0",
-  "description": "movie db challenge",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/badih-khoder/Movie-DB.git"
-  },
-  "author": "badih",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/badih-khoder/Movie-DB/issues"
-  },
-  "homepage": "https://github.com/badih-khoder/Movie-DB#readme",
-  "dependencies": {
-    "express": "^4.17.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
-  }
+    "name": "movie-db",
+    "version": "1.0.0",
+    "description": "movie db challenge",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/badih-khoder/Movie-DB.git"
+    },
+    "author": "badih",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/badih-khoder/Movie-DB/issues"
+    },
+    "homepage": "https://github.com/badih-khoder/Movie-DB#readme",
+    "dependencies": {
+        "express": "^4.17.2"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.15"
+    }
 }
