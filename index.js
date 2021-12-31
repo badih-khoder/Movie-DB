@@ -18,6 +18,21 @@ app.get('/time', (req, res) => {
 })
 
 
+app.get('/hello/:ID', (req, res) => {
+    res.json({ "status": 200, "message": "hello " + req.params.ID })
+})
+
+app.get('/hello/', (req, res) => {
+    res.json({ "status": 200, "message": "hello " })
+})
+
+
+
+app.get('/search', (req, res) => {
+    if (req.query.s) { res.json({ status: 200, message: "Ok", data: req.query.s }) } else { res.status(500);
+        res.json({ status: 500, error: true, message: "you have to provide a search" }) }
+})
+
 
 
 app.listen(port, () => {
