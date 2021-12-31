@@ -29,8 +29,7 @@ app.get('/hello/', (req, res) => {
 
 
 app.get('/search', (req, res) => {
-    if (req.query.s) { res.json({ status: 200, message: "Ok", data: req.query.s }) } else { res.status(500);
-        res.json({ status: 500, error: true, message: "you have to provide a search" }) }
+    if (req.query.s) { res.json({ status: 200, message: "Ok", data: req.query.s }) } else { res.status(500).json({ status: 500, error: true, message: "you have to provide a search" }) }
 })
 
 
