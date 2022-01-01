@@ -137,6 +137,18 @@ app.get('/movies/create', (req, res) => {
 })
 
 
+app.get('/movies/delete/:ID', (req, res) => {
+
+    let deletedmovie = req.params.ID
+    if (movies.length < deletedmovie) {
+        res.json({ status: 404, error: true, message: 'the movie <ID> does not exist' })
+    } else {
+        movies.splice(deletedmovie, 1)
+        res.json({ status: 200, data: movies })
+    }
+})
+
+
 
 
 
