@@ -59,9 +59,6 @@ app.get('/movies/read', (req, res) => {
 
 })
 
-app.get('/movies/update', (req, res) => {
-
-})
 
 app.get('/movies/delete', (req, res) => {
 
@@ -146,6 +143,28 @@ app.get('/movies/delete/:ID', (req, res) => {
         movies.splice(deletedmovie, 1)
         res.json({ status: 200, data: movies })
     }
+})
+
+
+
+
+
+app.get('/movies/update/:ID', (req, res) => {
+    var titlex = req.query.title;
+    var yearx = req.query.year;
+    var ratingx = req.query.rating;
+    if (!req.query.title) {
+        var titlex = movies[req.params.ID].title
+    }
+    if (!req.query.rating) {
+        var ratingx = movies[req.params.ID].rating
+    }
+    if (!req.query.year) {
+        var yearx = movies[req.params.ID].year
+    }
+    movies[req.params.ID] = { title: titlex, year: yearx, rating: ratingx };
+    res.json({ status: 200, data: movies })
+
 })
 
 
