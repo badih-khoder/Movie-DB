@@ -115,7 +115,7 @@ app.get('/movies/read/id/:id', (req, res) => {
 
 
 
-app.get('/movies/create', (req, res) => {
+app.post('/movies/create', (req, res) => {
     if (!req.query.rating) {
         req.query.rating = 4;
     }
@@ -134,7 +134,7 @@ app.get('/movies/create', (req, res) => {
 })
 
 
-app.get('/movies/delete/:ID', (req, res) => {
+app.delete('/movies/delete/:ID', (req, res) => {
 
     let deletedmovie = req.params.ID
     if (movies.length < deletedmovie) {
@@ -149,7 +149,7 @@ app.get('/movies/delete/:ID', (req, res) => {
 
 
 
-app.get('/movies/update/:ID', (req, res) => {
+app.put('/movies/update/:ID', (req, res) => {
     var titlex = req.query.title;
     var yearx = req.query.year;
     var ratingx = req.query.rating;
